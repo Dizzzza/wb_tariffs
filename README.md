@@ -21,10 +21,7 @@
 
 ### 1. Клонирование репозитория
 
-```bash
-git clone https://github.com/<your-org-or-username>/<your-repo>.git
-cd <your-repo>
-```
+git clone https://github.com/Dizzzza/wb_tariffs.git
 
 ### 2. Настройка переменных окружения
 
@@ -73,7 +70,3 @@ cd <your-repo>
 ### 4. Запуск сервиса
 
 docker-compose up
-
-```
-
-```
