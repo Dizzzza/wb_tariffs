@@ -21,10 +21,9 @@
 
 ### 1. Клонирование репозитория
 
-\`\`\`bash
-git clone <repository-url>
-cd wb-tariffs-service
-\`\`\`
+```bash
+git clone https://github.com/<your-org-or-username>/<your-repo>.git
+cd <your-repo>
 
 ### 2. Настройка переменных окружения
 
@@ -59,9 +58,7 @@ cd wb-tariffs-service
 
 1. Создайте новую Google Sheets таблицу
 2. Скопируйте ID таблицы из URL (часть между `/d/` и `/edit`)
-   \`\`\`
    https://docs.google.com/spreadsheets/d/SHEET_ID_HERE/edit
-   \`\`\`
 3. Предоставьте доступ сервисному аккаунту:
    - Откройте таблицу
    - Нажмите "Share" (Поделиться)
@@ -75,3 +72,4 @@ cd wb-tariffs-service
 ### 4. Запуск сервиса
 
 docker-compose up
+```
