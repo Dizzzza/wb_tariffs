@@ -1,0 +1,55 @@
+{
+  "name": "wb-tariffs-service",
+  "version": "1.0.0",
+  "description": "Сервис синхронизации тарифов Wildberries",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/src/index.js",
+    "dev": "tsx watch src/index.ts",
+    "migrate": "npx ts-node ./node_modules/knex/bin/cli.js migrate:latest",
+    "migrate:rollback": "knex migrate:rollback",
+    "migrate:status": "knex migrate:status",
+    "sync": "node dist/src/index.js --sync",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "knex": "ts-node --project tsconfig.json node_modules/knex/bin/cli.js",
+    "db:create": "node scripts/create-database.js",
+    "db:seed": "PGPASSWORD=$DB_PASSWORD psql -h $DB_HOST -p $DB_PORT -U $DB_USER -d $DB_NAME -f scripts/add_sample_sheet_config.sql",
+    "db:init": "npm run db:create && npm run migrate && npm run db:seed",
+    "start:with-init": "npm run db:init && npm run start"
+  },
+  "dependencies": {
+    "@types/knex": "^0.15.2",
+    "axios": "^1.11.0",
+    "dotenv": "^16.3.1",
+    "googleapis": "^156.0.0",
+    "knex": "^3.1.0",
+    "node-cron": "^3.0.3",
+    "pg": "^8.11.3",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.11",
+    "@types/node-cron": "^3.0.11",
+    "@types/pg": "^8.10.9",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.55.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.6.0",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "wildberries",
+    "tariffs",
+    "sync",
+    "api",
+    "postgresql"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
