@@ -24,6 +24,7 @@
 ```bash
 git clone https://github.com/<your-org-or-username>/<your-repo>.git
 cd <your-repo>
+```
 
 ### 2. Настройка переменных окружения
 
@@ -72,4 +73,7 @@ cd <your-repo>
 ### 4. Запуск сервиса
 
 docker-compose up
+
+```
+
 ```
